@@ -15,5 +15,5 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # import all of the routes from the routes file into the current package
-from app import routes
+from app import routes, models
 # Must be imported at the bottom of the file

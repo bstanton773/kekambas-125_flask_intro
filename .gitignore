@@ -9,3 +9,6 @@ __pycache__/
 
 # hide our environment variables in .env
 .env
+
+# ignore any sqlite databases
+*.db
