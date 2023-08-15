@@ -20,6 +20,11 @@ def signup():
         password = form.password.data
         # print(first_name, last_name, username, email, password)
 
+        # Check User table to see if there are any users with username or email
+        check_user = db.session.execute(db.select(User).where( (User.username==username) | (User.email==email) )).scalar()
+        if check_user:
+            print('A user with that username/password already exists')
+            return redirect(url_for('signup'))
         # Create a new instance of the User class with data from form
         new_user = User(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
         # Add the new_user object to the database
