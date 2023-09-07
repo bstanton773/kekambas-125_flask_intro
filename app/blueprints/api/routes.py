@@ -12,7 +12,7 @@ def get_token():
     token = auth_user.get_token()
     return {
         'token': token,
-        'token_expiration': auth_user.token_expiration
+        'tokenExpiration': auth_user.token_expiration
     }
 
 
